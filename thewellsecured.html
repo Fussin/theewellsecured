@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Well Secured | Next-Gen Cybersecurity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
+        
+        :root {
+            --primary: #06f7f7;
+            --secondary: #f306f7;
+            --accent: #06f75f;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #050505;
+            color: #e5e5e5;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .glow {
+            text-shadow: 0 0 10px rgba(6, 247, 247, 0.5);
+        }
+        
+        .neon-border {
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 10px rgba(6, 247, 247, 0.3), inset 0 0 10px rgba(6, 247, 247, 0.3);
+        }
+        
+        .cyber-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(6, 247, 247, 0.3), 0 0 30px rgba(6, 247, 247, 0.1);
+        }
+        
+        .nav-gradient {
+            background: linear-gradient(180deg, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0.7) 100%);
+            backdrop-filter: blur(10px);
+        }
+        
+        .terminal-effect {
+            background: rgba(5, 5, 5, 0.8);
+            border: 1px solid #333;
+            box-shadow: inset 0 0 10px rgba(0,255,255,0.1);
+        }
+        
+        .flicker {
+            animation: flicker 2s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+                opacity: 1;
+            }
+            20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+                opacity: 0.6;
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        
+        .loading-dot {
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+        
+        .loading-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .loading-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="fixed w-full z-50 nav-gradient">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-white text-xl"></i>
+                    </div>
+                    <a href="#" class="text-2xl font-bold gradient-text glow">THE WELL SECURED</a>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-primary-400 transition font-medium">HOME</a>
+                    <a href="#about" class="text-white hover:text-primary-400 transition font-medium">ABOUT</a>
+                    <a href="#solutions" class="text-white hover:text-primary-400 transition font-medium">SOLUTIONS</a>
+                    <a href="#case-studies" class="text-white hover:text-primary-400 transition font-medium">CASE STUDIES</a>
+                    <a href="#blog" class="text-white hover:text-primary-400 transition font-medium">BLOG</a>
+                    <a href="#contact" class="text-white hover:text-primary-400 transition font-medium">CONTACT</a>
+                </nav>
+                
+                <div class="hidden md:flex space-x-4">
+                    <a href="/login" class="px-6 py-2 rounded-full border border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-black transition">
+                        LOGIN
+                    </a>
+                    <button class="px-6 py-2 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 text-black font-bold hover:opacity-90 transition">
+                        GET SECURED
+                    </button>
+                </div>
+                
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90 absolute w-full left-0 px-6 pb-6 pt-2 z-50">
+            <div class="flex flex-col space-y-4 mt-4">
+                <a href="#home" class="text-white hover:text-primary-400 transition font-medium border-b border-gray-800 pb-2">HOME</a>
+                <a href="#about" class="text-white hover:text-primary-400 transition font-medium border-b border-gray-800 pb-2">ABOUT</a>
+                <a href="#solutions" class="text-white hover:text-primary-400 transition font-medium border-b border-gray-800 pb-2">SOLUTIONS</a>
+                <a href="#case-studies" class="text-white hover:text-primary-400 transition font-medium border-b border-gray-800 pb-2">CASE STUDIES</a>
+                <a href="#blog" class="text-white hover:text-primary-400 transition font-medium border-b border-gray-800 pb-2">BLOG</a>
+                <a href="#contact" class="text-white hover:text-primary-400 transition font-medium border-b border-gray-800 pb-2">CONTACT</a>
+            </div>
+            
+            <div class="flex space-x-4 mt-6">
+                <a href="/login" class="px-4 py-2 rounded-full border border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-black transition text-sm">
+                    LOGIN
+                </a>
+                <button class="px-4 py-2 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 text-black font-bold hover:opacity-90 transition text-sm">
+                    GET SECURED
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-24 pb-16 overflow-hidden">
+        <!-- Animated background -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-black via-black to-gray-900 opacity-90"></div>
+            <div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzMzMiIGZpbGwtb3BhY2l0eT0iMC4yIj48cGF0aCBkPSJNMzYgMzRoMjR2MjRIMzZ6TTYgMzRoMjR2MjRINnptMzAtMjRoMjR2MjRIMzZ6TTYgMTBoMjR2MjRINnptMzYtMTBoLTF2MTBoMTBWMTBoLTF6bS0zMCAxSDZWMTBoMjRWMEg2ek0zNiA2aDEwVjBIMzZ2NnptLTMwIDBoMTBWMEg2djZ6Ii8+PC9nPjwvZz48L3N2Zz4=');"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                        <span class="gradient-text">Quantum-Secure</span><br>
+                        <span class="text-white">Cybersecurity</span><br>
+                        <span class="text-primary-400" id="typewriter"></span>
+                    </h1>
+                    
+                    <p class="text-gray-400 text-lg mb-8 max-w-lg">
+                        Forging the future of digital protection with AI-driven security solutions for Web2 and Web3 ecosystems. 
+                        Military-grade encryption meets blockchain immutability.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                        <button class="px-8 py-3 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 text-black font-bold hover:opacity-90 transition text-lg flex items-center justify-center">
+                            <i class="fas fa-shield-alt mr-3"></i> GET PROTECTED
+                        </button>
+                        <button class="px-8 py-3 rounded-full border border-gray-600 text-white hover:bg-gray-800 transition flex items-center justify-center">
+                            <i class="fas fa-play-circle mr-3"></i> WATCH DEMO
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 relative">
+                    <div class="terminal-effect p-6 rounded-xl shadow-2xl max-w-md mx-auto">
+                        <div class="flex space-x-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        
+                        <div class="font-mono text-green-400 text-sm">
+                            <p class="mb-2 flicker">$ Starting security audit...</p>
+                            <p class="mb-2">> Scanning network endpoints: <span class="text-white">[===== 100%]</span></p>
+                            <p class="mb-2">> Analyzing smart contracts: <span class="text-white">[===== 100%]</span></p>
+                            <p class="mb-2">> Verifying encryption protocols: <span class="text-white">[===== 100%]</span></p>
+                            <p class="mb-2">> Threat assessment complete</p>
+                            <p class="text-primary-200 font-bold">> SYSTEM SECURE: ALL THREATS MITIGATED</p>
+                        </div>
+                        
+                        <div class="mt-8 flex justify-center">
+                            <div class="w-full bg-black bg-opacity-50 rounded-lg p-4 border border-gray-800">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-400 text-sm">SYSTEM STATUS</span>
+                                    <span class="text-green-400 text-sm font-bold">ACTIVE</span>
+                                </div>
+                                <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-green-400 to-blue-400 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -top-10 -left-10 w-20 h-20 rounded-full bg-secondary-500 opacity-20 blur-xl"></div>
+                    <div class="absolute -bottom-10 -right-10 w-20 h-20 rounded-full bg-primary-500 opacity-20 blur-xl"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animated floating elements -->
+        <div class="absolute top-1/4 left-10 w-4 h-4 rounded-full bg-primary-500 opacity-70 animate-pulse"></div>
+        <div class="absolute top-1/3 right-20 w-6 h-6 rounded-full bg-secondary-500 opacity-50 animate-pulse"></div>
+        <div class="absolute bottom-1/4 left-20 w-8 h-8 rounded-full bg-accent-500 opacity-30 animate-pulse" style="animation-delay: 0.5s;"></div>
+        <div class="absolute bottom-1/3 right-30 w-4 h-4 rounded-full bg-white opacity-60 animate-pulse" style="animation-delay: 0.7s;"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6 rounded-xl bg-gray-900 bg-opacity-50 border border-gray-800 hover:border-primary-500 transition">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 gradient-text">250+</div>
+                    <div class="text-gray-400">ENTERPRISE CLIENTS</div>
+                </div>
+                <div class="p-6 rounded-xl bg-gray-900 bg-opacity-50 border border-gray-800 hover:border-primary-500 transition">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 gradient-text">99.9%</div>
+                    <div class="text-gray-400">UPTIME RECORD</div>
+                </div>
+                <div class="p-6 rounded-xl bg-gray-900 bg-opacity-50 border border-gray-800 hover:border-primary-500 transition">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 gradient-text">10M+</div>
+                    <div class="text-gray-400">THREATS BLOCKED</div>
+                </div>
+                <div class="p-6 rounded-xl bg-gray-900 bg-opacity-50 border border-gray-800 hover:border-primary-500 transition">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 gradient-text">$5B+</div>
+                    <div class="text-gray-400">DIGITAL ASSETS PROTECTED</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animated grid background -->
+        <div class="absolute inset-0 z-0 opacity-20" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzMzMiIGZpbGwtb3BhY2l0eT0iMC4yIj48cGF0aCBkPSJNMzYgMzRoMjR2MjRIMzZ6TTYgMzRoMjR2MjRINnptMzAtMjRoMjR2MjRIMzZ6TTYgMTBoMjR2MjRINnptMzYtMTBoLTF2MTBoMTBWMTBoLTF6bS0zMCAxSDZWMTBoMjRWMEg2ek0zNiA2aDEwVjBIMzZ2NnptLTMwIDBoMTBWMEg2djZ6Ii8+PC9nPjwvZz48L3N2Zz4=');"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">
+                    <span class="gradient-text">About Our Mission</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    To build an impenetrable digital fortress for the modern internet, combining cutting-edge AI with 
+                    blockchain transparency to eliminate vulnerabilities across Web2 and Web3 ecosystems.
+                </p>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="max-w-4xl mx-auto mt-16">
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-1/2 w-1 h-full bg-gradient-to-b from-primary-500 to-secondary-500 transform -translate-x-1/2"></div>
+                    
+                    <!-- Timeline items -->
+                    <div class="mb-16 flex flex-row items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <h3 class="text-xl font-bold text-white mb-2">2023 - Foundation</h3>
+                            <p class="text-gray-400">Founded by a team of ex-intelligence agency cybersecurity experts and blockchain developers.</p>
+                        </div>
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center mx-auto flex-shrink-0 z-10">
+                            <i class="fas fa-rocket text-2xl"></i>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <!-- Empty for alignment -->
+                        </div>
+                    </div>
+                    
+                    <div class="mb-16 flex flex-row items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <!-- Empty for alignment -->
+                        </div>
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center mx-auto flex-shrink-0 z-10">
+                            <i class="fas fa-shield-alt text-2xl"></i>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <h3 class="text-xl font-bold text-white mb-2">2024 - First Clients</h3>
+                            <p class="text-gray-400">Onboarded major Web3 projects and Fortune 500 companies for comprehensive security audits.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-16 flex flex-row items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <h3 class="text-xl font-bold text-white mb-2">2024 - AI Integration</h3>
+                            <p class="text-gray-400">Developed proprietary AI algorithms for real-time threat detection and predictive analytics.</p>
+                        </div>
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center mx-auto flex-shrink-0 z-10">
+                            <i class="fas fa-brain text-2xl"></i>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <!-- Empty for alignment -->
+                        </div>
+                    </div>
+                    
+                    <div class="mb-16 flex flex-row items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <!-- Empty for alignment -->
+                        </div>
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center mx-auto flex-shrink-0 z-10">
+                            <i class="fas fa-bug text-2xl"></i>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <h3 class="text-xl font-bold text-white mb-2">2025 - Bug Bounty Program</h3>
+                            <p class="text-gray-400">Launched blockchain-based bug bounty program with smart contract escrow payments.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-row items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <h3 class="text-xl font-bold text-white mb-2">FUTURE - Quantum Ready</h3>
+                            <p class="text-gray-400">Developing post-quantum cryptography to future-proof our clients' infrastructure.</p>
+                        </div>
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center mx-auto flex-shrink-0 z-10">
+                            <i class="fas fa-atom text-2xl"></i>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <!-- Empty for alignment -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Team Section -->
+        <div class="container mx-auto px-6 mt-32">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">
+                    <span class="gradient-text">The Guardians</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Our team of elite security experts and cryptographers working tirelessly to protect your digital assets.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="neon-border rounded-xl p-6 bg-gray-900 hover:bg-gray-800 transition group">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 p-1">
+                        <div class="w-full h-full rounded-full bg-black bg-opacity-90 flex items-center justify-center">
+                            <i class="fas fa-user-secret text-4xl text-primary-500"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-white mb-2">Alex Carter</h3>
+                    <p class="text-primary-400 text-center mb-4">Chief Security Architect</p>
+                    <p class="text-gray-400 text-center mb-4">Former NSA cryptographer with 15+ years in cybersecurity.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-primary-400 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-primary-400 transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-primary-400 transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="neon-border rounded-xl p-6 bg-gray-900 hover:bg-gray-800 transition group">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 p-1">
+                        <div class="w-full h-full rounded-full bg-black bg-opacity-90 flex items-center justify-center">
+                            <i class="fas fa-laptop-code text-4xl text-secondary-500"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-white mb-2">Samira Patel</h3>
+                    <p class="text-primary-400 text-center mb-4">Blockchain Security Lead</p>
+                    <p class="text-gray-400 text-center mb-4">Ethereum core contributor and smart contract auditor.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-primary-400 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-primary-400 transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-primary-400 transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="neon-border rounded-xl p-6 bg-gray-900 hover:bg-gray-800 transition group">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 p-1">
+                        <div class="w-full h-full rounded-full bg-black bg-opacity-90 flex items-center justify-center">
+                            <i class="fas fa-robot text-4xl text-accent-500"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-white mb-2">Dr. Ling Zhou</h3>
+                    <p class="text-primary-400 text-center mb-4">AI Research Director</p>
+                    <p class="text-gray-400 text-center mb-4">Machine learning pioneer in anomaly detection systems.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-primary-400 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-primary-400 transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-primary-400 transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="neon-border rounded-xl p-6 bg-gray-900 hover:bg-gray-800 transition group">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 p-1">
+                        <div class="w-full h-full rounded-full bg-black bg-opacity-90 flex items-center justify-center">
+                            <i class="fas fa-fingerprint text-4xl text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-white mb-2">Markus Vogel</h3>
+                    <p class="text-primary-400 text-center mb-4">Penetration Tester</p>
+                    <p class="text-gray-400 text-center mb-4">Ethical hacker with 10+ years finding zero-day exploits.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-primary-400 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-primary-400 transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-primary-400 transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-20 bg-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">
+                    <span class="gradient-text">Our Security Solutions</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Comprehensive protection for both traditional web applications and cutting-edge blockchain systems.
+                </p>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="max-w-3xl mx-auto mb-12">
+                <div class="flex border-b border-gray-800">
+                    <button id="WEB2-tab" class="flex-1 py-4 px-6 text-center font-bold text-white border-b-2 border-primary-500">
+                        <i class="fas fa-globe mr-2"></i> WEB2 Security
+                    </button>
+                    <button id="WEB3-tab" class="flex-1 py-4 px-6 text-center font-bold text-gray-400 hover:text-white transition">
+                        <i class="fas fa-link mr-2"></i> WEB3 Security
+                    </button>
+                </div>
+            </div>
+            
+            <!-- WEB2 Content -->
+            <div id="WEB2-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300">
+                    <div class="p-6">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-black flex items-center justify-center mb-6">
+                            <i class="fas fa-lock text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Penetration Testing</h3>
+                        <p class="text-gray-400 mb-4">
+                            Simulated cyber attacks to identify vulnerabilities in your web applications before malicious actors can exploit them.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-primary-400">OWASP TOP 10</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-primary-400">API SECURITY</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-primary-400">SOC2 COMPLIANT</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-primary-500 font-medium hover:text-primary-400 transition">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300">
+                    <div class="p-6">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-black flex items-center justify-center mb-6">
+                            <i class="fas fa-shield-virus text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Managed WAF</h3>
+                        <p class="text-gray-400 mb-4">
+                            AI-powered Web Application Firewall with real-time threat prevention and adaptive learning capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-primary-400">DDoS PROTECTION</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-primary-400">ZERO-DAY DEFENSE</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-primary-400">AUTOMATED RULES</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-primary-500 font-medium hover:text-primary-400 transition">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300">
+                    <div class="p-6">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-black flex items-center justify-center mb-6">
+                            <i class="fas fa-user-secret text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Social Engineering Testing</h3>
+                        <p class="text-gray-400 mb-4">
+                            Simulated phishing, vishing, and physical intrusion tests to assess your human firewall security.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-primary-400">PHISHING SIMULATION</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-primary-400">AWARENESS TRAINING</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-primary-400">RED TEAM EXERCISES</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-primary-500 font-medium hover:text-primary-400 transition">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Web3 Content (Hidden by default) -->
+            <div id="web3-content" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300">
+                    <div class="p-6">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-secondary-500 to-black flex items-center justify-center mb-6">
+                            <i class="fab fa-ethereum text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Smart Contract Audits</h3>
+                        <p class="text-gray-400 mb-4">
+                            Comprehensive security reviews of EVM-compatible smart contracts using static analysis and formal verification.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-secondary-400">ERC STANDARDS</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-secondary-400">GAS OPTIMIZATION</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-secondary-400">RE-ENTRANCY GUARDS</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-secondary-500 font-medium hover:text-secondary-400 transition">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-secondary-500 transition duration-300">
+                    <div class="p-6">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-secondary-500 to-black flex items-center justify-center mb-6">
+                            <i class="fas fa-bug text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Blockchain Bug Bounty</h3>
+                        <p class="text-gray-400 mb-4">
+                            Blockchain-based bug bounty platform with decentralized escrow and automated payouts in crypto.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-secondary-400">SMART CONTRACT ESCROW</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-secondary-400">ETH/USDC PAYOUTS</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-secondary-400">TOKEN REWARDS</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-secondary-500 font-medium hover:text-secondary-400 transition">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-secondary-500 transition duration-300">
+                    <div class="p-6">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-secondary-500 to-black flex items-center justify-center mb-6">
+                            <i class="fas fa-lock-open text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">DeFi Security Suite</h3>
+                        <p class="text-gray-400 mb-4">
+                            Specialized security solutions for decentralized finance projects including flash loan attack prevention.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-secondary-400">ORACLE PROTECTION</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-secondary-400">PRICE MANIPULATION</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-secondary-400">LIQUIDITY SAFEGUARDS</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-secondary-500 font-medium hover:text-secondary-400 transition">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="py-20 bg-black relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">
+                    <span class="gradient-text">Success Stories</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    How we've helped organizations across industries achieve bulletproof security.
+                </p>
+            </div>
+            
+            <div class="mb-8 flex justify-center">
+                <div class="inline-flex rounded-lg border border-gray-800 overflow-hidden">
+                    <button class="filter-btn px-6 py-3 bg-gray-900 text-white font-medium" data-filter="all">ALL</button>
+                    <button class="filter-btn px-6 py-3 hover:bg-gray-900 text-gray-400 font-medium transition" data-filter="finance">FINANCE</button>
+                    <button class="filter-btn px-6 py-3 hover:bg-gray-900 text-gray-400 font-medium transition" data-filter="defi">DeFi</button>
+                    <button class="filter-btn px-6 py-3 hover:bg-gray-900 text-gray-400 font-medium transition" data-filter="healthcare">HEALTHCARE</button>
+                    <button class="filter-btn px-6 py-3 hover:bg-gray-900 text-gray-400 font-medium transition" data-filter="government">GOVERNMENT</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Case Study 1 -->
+                <div class="case-study cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300" data-category="defi">
+                    <div class="relative h-48 bg-gradient-to-br from-purple-900 to-black">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-70">
+                            <i class="fab fa-ethereum text-7xl text-purple-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="px-3 py-1 rounded-full bg-purple-900 bg-opacity-30 text-xs text-purple-400">DeFi</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">SecureDEX Protocol</h3>
+                        <p class="text-gray-400 mb-4">
+                            Audited and hardened a decentralized exchange protocol securing $1.2B in TVL, preventing critical vulnerabilities.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-chart-line mr-1"></i> +300% TVL growth post-audit</span>
+                            <button class="text-primary-500 hover:text-primary-400 transition font-medium text-sm">
+                                Read case study <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Study 2 -->
+                <div class="case-study cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300" data-category="finance">
+                    <div class="relative h-48 bg-gradient-to-br from-blue-900 to-black">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-70">
+                            <i class="fas fa-university text-7xl text-blue-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="px-3 py-1 rounded-full bg-blue-900 bg-opacity-30 text-xs text-blue-400">Finance</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">EuroBank International</h3>
+                        <p class="text-gray-400 mb-4">
+                            Implemented zero-trust architecture and AI-driven anomaly detection for a major European bank.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-shield-alt mr-1"></i> 99.9% attack prevention</span>
+                            <button class="text-primary-500 hover:text-primary-400 transition font-medium text-sm">
+                                Read case study <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Study 3 -->
+                <div class="case-study cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300" data-category="healthcare">
+                    <div class="relative h-48 bg-gradient-to-br from-green-900 to-black">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-70">
+                            <i class="fas fa-hospital text-7xl text-green-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="px-3 py-1 rounded-full bg-green-900 bg-opacity-30 text-xs text-green-400">Healthcare</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">MedSecure Systems</h3>
+                        <p class="text-gray-400 mb-4">
+                            Protected sensitive patient data across 47 hospitals with end-to-end encryption and HIPAA compliance.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-user-shield mr-1"></i> Zero breaches since deployment</span>
+                            <button class="text-primary-500 hover:text-primary-400 transition font-medium text-sm">
+                                Read case study <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Study 4 -->
+                <div class="case-study cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300" data-category="government">
+                    <div class="relative h-48 bg-gradient-to-br from-yellow-900 to-black">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-70">
+                            <i class="fas fa-landmark text-7xl text-yellow-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="px-3 py-1 rounded-full bg-yellow-900 bg-opacity-30 text-xs text-yellow-400">Government</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">National Defense Network</h3>
+                        <p class="text-gray-400 mb-4">
+                            Secured critical infrastructure with military-grade encryption and quantum-resistant protocols.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-star-of-life mr-1"></i> Classified results</span>
+                            <button class="text-primary-500 hover:text-primary-400 transition font-medium text-sm">
+                                Read case study <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Study 5 -->
+                <div class="case-study cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300" data-category="defi">
+                    <div class="relative h-48 bg-gradient-to-br from-pink-900 to-black">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-70">
+                            <i class="fas fa-coins text-7xl text-pink-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="px-3 py-1 rounded-full bg-pink-900 bg-opacity-30 text-xs text-pink-400">DeFi</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">StableGuard Treasury</h3>
+                        <p class="text-gray-400 mb-4">
+                            Prevented $250M potential loss through rigorous auditing of stablecoin protocol reserve mechanisms.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-money-bill-wave mr-1"></i> 100% reserves verified</span>
+                            <button class="text-primary-500 hover:text-primary-400 transition font-medium text-sm">
+                                Read case study <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Study 6 -->
+                <div class="case-study cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300" data-category="finance">
+                    <div class="relative h-48 bg-gradient-to-br from-red-900 to-black">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-70">
+                            <i class="fas fa-credit-card text-7xl text-red-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="px-3 py-1 rounded-full bg-red-900 bg-opacity-30 text-xs text-red-400">Finance</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Global Payment Network</h3>
+                        <p class="text-gray-400 mb-4">
+                            Secured real-time payment processing for 50M+ users with fraud detection AI and PCI-DSS compliance.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-percentage mr-1"></i> 0.001% fraud rate</span>
+                            <button class="text-primary-500 hover:text-primary-400 transition font-medium text-sm">
+                                Read case study <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="px-8 py-3 rounded-full border border-gray-700 text-white hover:bg-gray-800 transition flex items-center mx-auto">
+                    VIEW ALL CASE STUDIES <i class="fas fa-arrow-right ml-3"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">
+                    <span class="gradient-text">Security Insights</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Latest research, security advisories, and thought leadership from our team.
+                </p>
+            </div>
+            
+            <!-- Featured Post -->
+            <div class="cyber-card bg-black rounded-xl overflow-hidden border border-gray-800 mb-12 hover:border-primary-500 transition duration-300">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <div class="h-full bg-gradient-to-br from-blue-900 to-black p-8 flex items-center">
+                            <div>
+                                <div class="flex items-center mb-4">
+                                    <span class="px-3 py-1 rounded-full bg-blue-900 bg-opacity-30 text-xs text-blue-400">RESEARCH</span>
+                                    <span class="ml-3 text-xs text-gray-500">June 15, 2023</span>
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Post-Quantum Cryptography: Preparing for the Y2Q Problem</h3>
+                                <p class="text-gray-400 mb-6">
+                                    How quantum computing will break current encryption standards and what enterprises should do now to prepare for the coming cryptographic apocalypse.
+                                </p>
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center mr-3">
+                                        <i class="fas fa-user text-gray-400"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-400">By Dr. Ling Zhou</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="h-full bg-gray-800 p-8">
+                            <div class="h-full flex flex-col justify-center">
+                                <div class="mb-6">
+                                    <img src="https://via.placeholder.com/600x400/1a1a1a/06f7f7?text=Quantum+Threat" alt="Quantum Threat" class="rounded-lg">
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-500"><i class="fas fa-clock mr-1"></i> 12 min read</span>
+                                    <button class="text-primary-500 hover:text-primary-400 transition font-medium flex items-center">
+                                        Read article <i class="fas fa-arrow-right ml-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Blog Posts Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Post 1 -->
+                <div class="cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-purple-900 to-black flex items-center justify-center">
+                        <i class="fas fa-bug text-6xl text-purple-500 opacity-70"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-primary-400">WEB3 SECURITY</span>
+                            <span class="ml-3 text-xs text-gray-500">June 10, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">The Rising Threat of Flash Loan Attacks in DeFi</h3>
+                        <p class="text-gray-400 mb-4">
+                            An analysis of recent flash loan exploits and strategies to protect your protocol from these sophisticated attacks.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500"><i class="fas fa-clock mr-1"></i> 8 min read</span>
+                            <button class="text-primary-500 hover:text-primary-400 transition">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 2 -->
+                <div class="cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-green-900 to-black flex items-center justify-center">
+                        <i class="fas fa-robot text-6xl text-green-500 opacity-70"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-primary-400">AI SECURITY</span>
+                            <span class="ml-3 text-xs text-gray-500">May 28, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Evading AI-Powered Security Systems</h3>
+                        <p class="text-gray-400 mb-4">
+                            How attackers are bypassing machine learning security controls and what we can do to make our defenses more robust.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500"><i class="fas fa-clock mr-1"></i> 10 min read</span>
+                            <button class="text-primary-500 hover:text-primary-400 transition">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 3 -->
+                <div class="cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-yellow-900 to-black flex items-center justify-center">
+                        <i class="fas fa-user-secret text-6xl text-yellow-500 opacity-70"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="px-3 py-1 rounded-full bg-gray-800 text-xs text-primary-400">PEN TESTING</span>
+                            <span class="ml-3 text-xs text-gray-500">May 15, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Advanced Red Team Tactics for 2023</h3>
+                        <p class="text-gray-400 mb-4">
+                            The latest techniques used by ethical hackers to breach enterprise networks and how to defend against them.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500"><i class="fas fa-clock mr-1"></i> 15 min read</span>
+                            <button class="text-primary-500 hover:text-primary-400 transition">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="px-8 py-3 rounded-full border border-gray-700 text-white hover:bg-gray-800 transition flex items-center mx-auto">
+                    VIEW ALL ARTICLES <i class="fas fa-arrow-right ml-3"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="py-20 bg-black relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">
+                    <span class="gradient-text">Join Our Mission</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Work with the brightest minds in cybersecurity to build the digital fortresses of tomorrow.
+                </p>
+            </div>
+            
+            <div class="mb-8 flex justify-center">
+                <div class="inline-flex rounded-lg border border-gray-800 overflow-hidden">
+                    <button class="filter-job px-6 py-3 bg-gray-900 text-white font-medium" data-filter="all">ALL</button>
+                    <button class="filter-job px-6 py-3 hover:bg-gray-900 text-gray-400 font-medium transition" data-filter="engineering">ENGINEERING</button>
+                    <button class="filter-job px-6 py-3 hover:bg-gray-900 text-gray-400 font-medium transition" data-filter="research">RESEARCH</button>
+                    <button class="filter-job px-6 py-3 hover:bg-gray-900 text-gray-400 font-medium transition" data-filter="operations">OPERATIONS</button>
+                    <button class="filter-job px-6 py-3 hover:bg-gray-900 text-gray-400 font-medium transition" data-filter="business">BUSINESS</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Job 1 -->
+                <div class="job cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300" data-category="engineering">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-purple-900 bg-opacity-30 text-xs text-purple-400">ENGINEERING</span>
+                            <span class="text-xs text-gray-500">REMOTE</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Principal Blockchain Security Engineer</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Lead our team in developing advanced security mechanisms for smart contracts and DeFi protocols.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">Solidity</span>
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">Rust</span>
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">EVM</span>
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">Zero-knowledge</span>
+                        </div>
+                        <button class="w-full py-2 rounded-lg bg-gradient-to-r from-primary-500 to-secondary-500 text-black font-bold hover:opacity-90 transition">
+                            APPLY NOW
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Job 2 -->
+                <div class="job cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300" data-category="research">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-blue-900 bg-opacity-30 text-xs text-blue-400">RESEARCH</span>
+                            <span class="text-xs text-gray-500">HYBRID</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">AI Security Researcher</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Develop novel machine learning approaches to detect and prevent sophisticated cyber threats.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">Python</span>
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">TensorFlow</span>
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">Adversarial ML</span>
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">NLP</span>
+                        </div>
+                        <button class="w-full py-2 rounded-lg bg-gradient-to-r from-primary-500 to-secondary-500 text-black font-bold hover:opacity-90 transition">
+                            APPLY NOW
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Job 3 -->
+                <div class="job cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300" data-category="engineering">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-purple-900 bg-opacity-30 text-xs text-purple-400">ENGINEERING</span>
+                            <span class="text-xs text-gray-500">REMOTE</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Senior Penetration Tester</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Conduct advanced security assessments for enterprise clients and Web3 projects.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">Red Teaming</span>
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">Exploit Dev</span>
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">OSCP</span>
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">Ethical Hacking</span>
+                        </div>
+                        <button class="w-full py-2 rounded-lg bg-gradient-to-r from-primary-500 to-secondary-500 text-black font-bold hover:opacity-90 transition">
+                            APPLY NOW
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Job 4 -->
+                <div class="job cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition duration-300" data-category="operations">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-green-900 bg-opacity-30 text-xs text-green-400">OPERATIONS</span>
+                            <span class="text-xs text-gray-500">SAN FRANCISCO</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Security Operations Manager</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Oversee our 24/7 security operations center and incident response team.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">SIEM</span>
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">SOC</span>
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">Incident Response</span>
+                            <span class="px-2 py-1 rounded-full bg-gray-800 text-xs text-gray-300">CISSP</span>
+                        </div>
+                        <button class="w-full py-2 rounded-lg bg-gradient-to-r from-primary-500 to-secondary-500 text-black font-bold hover:opacity-90 transition">
+                            APPLY NOW
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cyber-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 p-8">
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-white mb-4">Don't see your dream role?</h3>
+                    <p class="text-gray-400 max-w-2xl mx-auto mb-6">
+                        We're always looking for exceptional talent. Even if you don't see an opening that matches your skills,
+                        we'd love to hear from you. The best candidates often create their own roles at The Well Secured.
+                    </p>
+                    <button class="px-8 py-3 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 text-black font-bold hover:opacity-90 transition">
+                        SUBMIT GENERAL APPLICATION
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">
+                    <span class="gradient-text">Get In Touch</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Whether you need a security consultation or want to report a vulnerability, our team is ready to assist.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="cyber-card bg-gray-800 rounded-xl overflow-hidden border border-gray-700 p-8 mb-8">
+                        <h3 class="text-xl font-bold text-white mb-6">Contact Form</h3>
+                        
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="first-name" class="block text-gray-400 text-sm mb-2">First Name</label>
+                                    <input type="text" id="first-name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white">
+                                </div>
+                                <div>
+                                    <label for="last-name" class="block text-gray-400 text-sm mb-2">Last Name</label>
+                                    <input type="text" id="last-name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-400 text-sm mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="subject" class="block text-gray-400 text-sm mb-2">Subject</label>
+                                <select id="subject" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white">
+                                    <option>General Inquiry</option>
+                                    <option>Security Consultation</option>
+                                    <option>Bug Bounty Report</option>
+                                    <option>Press Inquiry</option>
+                                    <option>Careers</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-400 text-sm mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white"></textarea>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="encrypt" class="w-4 h-4 text-primary-500 bg-gray-700 border-gray-600 rounded focus:ring-primary-500 focus:ring-2">
+                                    <label for="encrypt" class="ml-2 text-sm text-gray-400">End-to-end encrypt this message</label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="w-full py-3 rounded-lg bg-gradient-to-r from-primary-500 to-secondary-500 text-black font-bold hover:opacity-90 transition">
+                                SEND MESSAGE
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="cyber-card bg-gray-800 rounded-xl overflow-hidden border border-gray-700 p-8">
+                        <h3 class="text-xl font-bold text-white mb-6">Connect Wallet</h3>
+                        <p class="text-gray-400 mb-6">
+                            For bug bounty submissions or to verify your identity, connect your Web3 wallet below.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                            <button class="flex items-center justify-center py-3 px-4 bg-gray-700 hover:bg-gray-600 rounded-lg transition">
+                                <i class="fab fa-ethereum text-2xl text-indigo-400 mr-2"></i>
+                                <span class="text-white">MetaMask</span>
+                            </button>
+                            <button class="flex items-center justify-center py-3 px-4 bg-gray-700 hover:bg-gray-600 rounded-lg transition">
+                                <i class="fas fa-wallet text-2xl text-blue-400 mr-2"></i>
+                                <span class="text-white">WalletConnect</span>
+                            </button>
+                            <button class="flex items-center justify-center py-3 px-4 bg-gray-700 hover:bg-gray-600 rounded-lg transition">
+                                <i class="fas fa-ghost text-2xl text-purple-400 mr-2"></i>
+                                <span class="text-white">Phantom</span>
+                            </button>
+                        </div>
+                        
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-lock mr-2"></i>
+                            <span>Connecting your wallet is secure and we never request unnecessary permissions.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="cyber-card bg-gray-800 rounded-xl overflow-hidden border border-gray-700 p-8 h-full">
+                        <h3 class="text-xl font-bold text-white mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Address -->
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-black flex items-center justify-center">
+                                        <i class="fas fa-map-marker-alt text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-white">Headquarters</h4>
+                                    <p class="text-gray-400">
+                                        The Well Secured AG<br>
+                                        Bahnhofstrasse 42<br>
+                                        8001 Zürich, Switzerland
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-black flex items-center justify-center">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-white">Email Us</h4>
+                                    <p class="text-gray-400">
+                                        General inquiries: <a href="mailto:hello@wellsecured.com" class="text-primary-400 hover:underline">hello@wellsecured.com</a><br>
+                                        Security emergencies: <a href="mailto:security@wellsecured.com" class="text-primary-400 hover:underline">security@wellsecured.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-black flex items-center justify-center">
+                                        <i class="fas fa-phone-alt text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-white">Call Us</h4>
+                                    <p class="text-gray-400">
+                                        +41 44 123 4567 (Office)<br>
+                                        +41 76 789 1011 (24/7 Security Hotline)
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Social -->
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-black flex items-center justify-center">
+                                        <i class="fas fa-hashtag text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-white">Connect With Us</h4>
+                                    <div class="flex space-x-4 mt-2">
+                                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary-500 transition">
+                                            <i class="fab fa-twitter text-lg text-white"></i>
+                                        </a>
+                                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary-500 transition">
+                                            <i class="fab fa-linkedin-in text-lg text-white"></i>
+                                        </a>
+                                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary-500 transition">
+                                            <i class="fab fa-github text-lg text-white"></i>
+                                        </a>
+                                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary-500 transition">
+                                            <i class="fab fa-telegram-plane text-lg text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12 h-64 bg-gray-700 rounded-lg overflow-hidden">
+                            <!-- Map placeholder -->
+                            <div class="h-full w-full flex items-center justify-center text-gray-500">
+                                <i class="fas fa-map text-4xl opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-white text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold gradient-text">THE WELL SECURED</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Next-generation cybersecurity powered by AI and blockchain technology.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center hover:bg-primary-500 transition">
+                            <i class="fab fa-twitter text-lg text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center hover:bg-primary-500 transition">
+                            <i class="fab fa-linkedin-in text-lg text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center hover:bg-primary-500 transition">
+                            <i class="fab fa-github text-lg text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center hover:bg-primary-500 transition">
+                            <i class="fab fa-telegram-plane text-lg text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">SOLUTIONS</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">Web Application Security</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">Blockchain Audits</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">Penetration Testing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">Smart Contract Security</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">Managed Detection & Response</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">COMPANY</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">Our Team</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">RESOURCES</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">Research Papers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">Security Advisories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">Bug Bounty Program</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-900 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-500 text-sm mb-4 md:mb-0">
+                    &copy; 2023 The Well Secured AG. All rights reserved.
+                </div>
+                
+                <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm">
+                    <a href="#" class="text-gray-500 hover:text-primary-400 transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-primary-400 transition">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-primary-400 transition">GDPR Compliance</a>
+                    <a href="#" class="text-gray-500 hover:text-primary-400 transition">SOC2 Report</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <div id="chat-button" class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center shadow-xl cursor-pointer hover:opacity-90 transition">
+            <i class="fas fa-comment-dots text-2xl text-white"></i>
+        </div>
+        
+        <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 bg-gray-900 rounded-xl overflow-hidden shadow-2xl border border-gray-800">
+            <div class="bg-gray-800 px-4 py-3 flex justify-between items-center border-b border-gray-700">
+                <h3 class="font-bold text-white">Security Support</h3>
+                <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                    <span class="text-xs text-gray-400">Online</span>
+                    <button id="close-chat" class="text-gray-400 hover:text-white transition">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="p-4 h-64 overflow-y-auto bg-gray-900">
+                <div class="flex mb-4">
+                    <div class="flex-shrink-0 mr-3">
+                        <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center">
+                            <i class="fas fa-user-shield text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="px-4 py-2 bg-gray-800 rounded-lg inline-block">
+                            <p class="text-white">Hello! I'm your security assistant. How can I help you today?</p>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Just now</p>
+                    </div>
+                </div>
+                
+                <div class="typing-indicator hidden mb-4">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 mr-3">
+                            <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center">
+                                <i class="fas fa-user-shield text-gray-400"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 rounded-full bg-gray-500 loading-dot"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-500 loading-dot"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-500 loading-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-4 border-t border-gray-800 bg-gray-800">
+                <div class="relative">
+                    <input type="text" placeholder="Type your message..." class="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 pr-12">
+                    <button class="absolute right-3 top-3 text-gray-400 hover:text-primary-500 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Page Modal -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center">
+        <div class="bg-gray-900 rounded-xl p-8 max-w-md w-full mx-4 border border-gray-800">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-white">Welcome Back</h2>
+                <button id="closeLoginModal" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="loginForm" class="space-y-6">
+                <div>
+                    <label for="email" class="block text-gray-400 mb-2">Email Address</label>
+                    <input type="email" id="loginEmail" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-white">
+                </div>
+                
+                <div>
+                    <label for="password" class="block text-gray-400 mb-2">Password</label>
+                    <input type="password" id="loginPassword" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-white">
+                </div>
+                
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="rememberMe" class="w-4 h-4 text-primary-500 bg-gray-800 border-gray-700 rounded">
+                        <label for="rememberMe" class="ml-2 text-gray-400 text-sm">Remember me</label>
+                    </div>
+                    <a href="#" class="text-sm text-primary-500 hover:underline">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="w-full py-3 rounded-lg bg-gradient-to-r from-primary-500 to-secondary-500 text-black font-bold hover:opacity-90 transition">
+                    LOGIN
+                </button>
+                
+                <div class="text-center text-gray-400 text-sm">
+                    Not registered yet? <a href="#" class="text-primary-500 hover:underline">Create an account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Add login modal functionality
+        const loginButtons = document.querySelectorAll('[href="/login"]');
+        const loginModal = document.getElementById('loginModal');
+        const closeLoginModal = document.getElementById('closeLoginModal');
+        const loginForm = document.getElementById('loginForm');
+
+        // Open login modal when any login button is clicked
+        loginButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginModal.classList.remove('hidden');
+            });
+        });
+
+        // Close login modal
+        closeLoginModal.addEventListener('click', function() {
+            loginModal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside
+        loginModal.addEventListener('click', function(e) {
+            if (e.target === loginModal) {
+                loginModal.classList.add('hidden');
+            }
+        });
+
+        // Handle login form submission
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+
+            // Here you would normally send the data to your backend
+            console.log('Login attempt with:', { email, password, rememberMe });
+            
+            // Simulate login process
+            setTimeout(() => {
+                alert('Login functionality would connect to your auth system\n\nIn a real implementation, this would:\n1. Validate credentials\n2. Set auth tokens\n3. Redirect to dashboard');
+                loginModal.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Typewriter effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const typewriter = new Typewriter('#typewriter', {
+                loop: true,
+                delay: 75,
+            });
+            
+            typewriter
+                .typeString('for WEB2')
+                .pauseFor(2000)
+                .deleteAll()
+                .typeString('for WEB3')
+                .pauseFor(2000)
+                .deleteAll()
+                .typeString('for the Metaverse')
+                .pauseFor(2000)
+                .deleteAll()
+                .typeString('for AI')
+                .pauseFor(2000)
+                .deleteAll()
+                .typeString('for Cybersecurity')
+                .pauseFor(2000)
+                .deleteAll()
+                .typeString('for Blockchain')
+                .pauseFor(2000)
+                .deleteAll()
+                .typeString('for the Future')
+                .pauseFor(2000)   
+                .start();
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Tabs functionality
+            const web2Tab = document.getElementById('web2-tab');
+            const web3Tab = document.getElementById('web3-tab');
+            const web2Content = document.getElementById('web2-content');
+            const web3Content = document.getElementById('web3-content');
+            
+            web2Tab.addEventListener('click', function() {
+                web2Tab.classList.add('text-white', 'border-primary-500');
+                web2Tab.classList.remove('text-gray-400');
+                
+                web3Tab.classList.add('text-gray-400');
+                web3Tab.classList.remove('text-white', 'border-primary-500');
+                
+                web2Content.classList.remove('hidden');
+                web3Content.classList.add('hidden');
+            });
+            
+            web3Tab.addEventListener('click', function() {
+                web3Tab.classList.add('text-white', 'border-secondary-500');
+                web3Tab.classList.remove('text-gray-400');
+                
+                web2Tab.classList.add('text-gray-400');
+                web2Tab.classList.remove('text-white', 'border-primary-500');
+                
+                web3Content.classList.remove('hidden');
+                web2Content.classList.add('hidden');
+            });
+            
+            // Case study filter
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const caseStudies = document.querySelectorAll('.case-study');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-gray-900', 'text-white');
+                        btn.classList.add('text-gray-400', 'hover:bg-gray-900');
+                    });
+                    this.classList.add('bg-gray-900', 'text-white');
+                    this.classList.remove('text-gray-400', 'hover:bg-gray-900');
+                    
+                    // Filter case studies
+                    caseStudies.forEach(study => {
+                        if (filter === 'all' || study.getAttribute('data-category') === filter) {
+                            study.classList.remove('hidden');
+                        } else {
+                            study.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+            
+            // Job filter
+            const jobFilterButtons = document.querySelectorAll('.filter-job');
+            const jobs = document.querySelectorAll('.job');
+            
+            jobFilterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    jobFilterButtons.forEach(btn => {
+                        btn.classList.remove('bg-gray-900', 'text-white');
+                        btn.classList.add('text-gray-400', 'hover:bg-gray-900');
+                    });
+                    this.classList.add('bg-gray-900', 'text-white');
+                    this.classList.remove('text-gray-400', 'hover:bg-gray-900');
+                    
+                    // Filter jobs
+                    jobs.forEach(job => {
+                        if (filter === 'all' || job.getAttribute('data-category') === filter) {
+                            job.classList.remove('hidden');
+                        } else {
+                            job.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+            
+            // Chat widget
+            const chatButton = document.getElementById('chat-button');
+            const chatWindow = document.getElementById('chat-window');
+            const closeChat = document.getElementById('close-chat');
+            const typingIndicator = document.querySelector('.typing-indicator');
+            
+            chatButton.addEventListener('click', function() {
+                chatWindow.classList.toggle('hidden');
+            });
+            
+            closeChat.addEventListener('click', function() {
+                chatWindow.classList.add('hidden');
+            });
+            
+            // Simulate typing when chat opens
+            chatButton.addEventListener('click', function() {
+                if (!chatWindow.classList.contains('hidden')) {
+                    setTimeout(() => {
+                        typingIndicator.classList.remove('hidden');
+                        
+                        setTimeout(() => {
+                            typingIndicator.classList.add('hidden');
+                            // Here you would add the actual response
+                        }, 1500);
+                    }, 1000);
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
